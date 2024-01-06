@@ -6,7 +6,7 @@
     font-family: "Be Vietnam Pro", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     scroll-behavior: smooth;
 }
 :root{
@@ -235,10 +235,20 @@
         transform: translateY(2rem);
     }
 }
-
 .project-sec{
-    background-color:rgb(231,231,231);
+    position: relative;
     margin-top: 5.7rem;
+}
+.project-sec::before{
+    content:"";
+    background-color:rgb(231,231,231);
+    top:0;
+    left:-100%;
+    bottom: 0;
+    right:-100%;
+
+    position: absolute;
+    z-index:-5;
 }
 
 .page-heading{
@@ -267,7 +277,7 @@
     position: relative;
     box-shadow: 0rem 0rem 2.5rem #1f1f1f;
     z-index:0;
-    transform-style: preserve-3d;
+
 
     
     
@@ -394,6 +404,142 @@
     margin-left:7.5rem;
     background-image:url(./images/projects/Project4.png);
 }
+
+@media (max-width:1080px) {
+    .page-heading {
+      padding-top: 1.875rem;
+      color: var(--bgOrange);
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .project-container {
+      padding: 0.31rem;
+      margin: 0.625rem;
+      gap: 4rem;
+
+    }
+    .project-card {
+      width: 100%;
+      max-height: 500px;
+      background-size:contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+    .project-content {
+      scale: 0.5;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+    .project-content-left {
+      left: 0;
+    }
+    .project-heading {
+      font-size:2.5rem;
+      width: 100%;
+    }
+    .project-sub-heading {
+      width: 100%;
+    }
+    #project2 {
+      margin-left: 0;
+    }
+    #project4 {
+      margin-left: 0;
+    }
+    .project-skill-container {
+      width: 100%;
+    }
+    .project-skill {
+      width: 2.18rem;
+    }
+    .project-card:hover .project-number {
+      display: none;
+    }
+    .project-card:hover .project-content {
+      scale: 0.55;
+    }
+  }
+  
+  .skill-container{
+    position: relative;
+    display: flex;
+    /* padding: 5rem; */
+    margin: 15rem auto;
+    gap: 1.875rem;
+
+
+    
+
+  }
+  .skill-container-left{
+    width: 50%;
+    display: flex;
+    align-items:left;
+    flex-direction: column;
+  }
+  .skill-container-right{
+    width: 50%;
+    display: flex;
+    justify-content:left;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 2rem;
+
+  }
+  .skill-fade-text{
+    font-size:15em;
+    color: rgb(231,231,231);
+    position: absolute;
+    bottom:-65%;
+    right: -35%;
+    user-select: none;
+
+  }
+  .blob-style{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: blob 2s linear 0s infinite alternate;
+    z-index: -1;
+  }
+  @keyframes blob{
+    100%{
+        top: 54%;
+        left: 46%;
+    }
+  }
+  .skills-logo{
+    width:5.625rem;
+    transition: all 0.5s;
+
+
+  }
+  .skills-logo:hover{
+    transform: scale(1.2);
+  }
+  .skill-heading{
+    font-size:3.1rem;
+    font-style: bold;
+    color: var(--bgOrange);
+    line-height:3.1rem;
+
+  }
+  .caps{
+    font-size:5.7rem;
+  }
+  .skill-subHeading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align:justify;
+  }
+  .skill-subHeading p{
+    margin:1rem auto;
+
+  }
 
 
 
